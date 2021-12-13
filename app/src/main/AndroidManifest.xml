@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.doraemon">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/doraemon_icon"
+        android:label="哆啦A梦的口袋"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <service
+            android:name=".Weather.service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".Weather.WeatherActivity"
+                   android:theme="@style/WeatherTheme"/>
+        <activity android:name=".Weather.WeatherMainActivity"
+                   android:theme="@style/WeatherTheme"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Note.MyNote"
+            android:theme="@style/WeatherTheme"/>
+        <activity
+            android:name=".Calculator"
+            android:label="计算器" />
+        <activity
+            android:name=".BMI"
+            android:label="BMI健康管理" />
+        <activity
+            android:name=".Score"
+            android:label="计分板" />
+        <activity
+            android:name=".Chouqian"
+            android:label="抽签助手" />
+        <activity
+            android:name=".Jinzhi"
+            android:label="进制转换器" />
+        <activity android:name=".Note.EditActivity"
+            android:theme="@style/WeatherTheme"></activity>
+        <activity android:name=".Note.ShowActivity"
+            android:theme="@style/WeatherTheme"></activity>
+
+        <receiver
+            android:name=".AlarmReceive"
+            android:process=":remote" />
+    </application>
+
+</manifest>
